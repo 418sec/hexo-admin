@@ -90,7 +90,7 @@ var Post = React.createClass({
       updated: null,
       rendered: marked(text)
     })
-    this._post({_content: text})
+    this._post({_content: DOMPurify.sanitize(text)})
   },
 
   handleChangeTitle: function (title) {
